@@ -5,7 +5,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">DataTables.Net</h4>
+                <h4 class="page-title">Arus Barang</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="#">
@@ -35,7 +35,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Add Row</h4>
+                                <h4 class="card-title">Barang Masuk</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
                                     Add Row
@@ -50,11 +50,9 @@
                                     <thead>
                                         <tr>
                                             <th>Barang</th>
-                                            <th>Stok</th>
+                                            <th>Jumlah</th>
                                             <th>Harga</th>
-                                            <th>Stok</th>
                                             <th>Tanggal</th>
-                                            <th>Jenis</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -66,7 +64,6 @@
                                             <td>45000</td>
                                             <td>4</td>
                                             <td>01-24-2023</td>
-                                            <td>Barang Masuk</td>
                                             <td>
                                                 <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
                                                 <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>

@@ -33,8 +33,8 @@
 			<!-- Logo Header -->
 			<div class="logo-header">
 				
-				<a href="#" class="logo">
-					<img src="/assets/img/logoazzara.svg" alt="navbar brand" class="navbar-brand">
+				<a href="#" class="navbar-brand">
+					<img src="/assets/img/logo_biro.png" alt="logo" class="d-inline-block align-text-top mb-2" width="200" height="40">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -85,8 +85,8 @@
 									<div class="user-box">
 										<div class="avatar-lg"><img src="../../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
 										<div class="u-text">
-											<h4>{{Auth::user()->name}}</h4>
-											<p class="text-muted">{{Auth::user()->email}}</p>
+											<h4>Sefza</h4>
+											<p class="text-muted">sefzaauma@gmail.com</p>
 											<a href="#" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
 										</div>
 									</div>
@@ -116,8 +116,8 @@
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									{{Auth::user()->name}}
-									<span class="user-level">{{Auth::user()->level}}</span>
+									Sefza
+									<span class="user-level">Biro</span>
 								</span>
 							</a>
 
@@ -125,9 +125,21 @@
 					</div>
 					<ul class="nav">
 						<li class="nav-item">
-							<a href="/home">
+							<a href="/biro/dashboard">
 								<i class="fas fa-home"></i> 
 								<p>Dashboard</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/biro/barangMasuk">
+								<i class="fas fa-cart-plus"></i> 
+								<p>Barang Masuk</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/biro/barangKeluar">
+								<i class="fas fa-cart-arrow-down"></i> 
+								<p>Barang Keluar</p>
 							</a>
 						</li>
 						<li class="nav-section">
@@ -144,11 +156,7 @@
 							</a>
 							<div class="collapse" id="base">
 								<ul class="nav nav-collapse">
-									<li>
-										<a href="/user">
-											<span class="sub-item">Data User</span>
-										</a>
-									</li>
+									
 									<li>
 										<a href="/kategori">
 											<span class="sub-item">Data Kategori</span>

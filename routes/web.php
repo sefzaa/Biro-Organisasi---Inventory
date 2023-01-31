@@ -43,7 +43,24 @@ use App\Http\Controllers\KategoriController;
 //     });
 
 Route::get('/', function () {
-    return view ('home');
+    return view ('/layout/layoutadmin');
+
 });
 
 
+Route::get('/biro/dashboard', function(){
+    return view ('/biro/dashboard');
+});
+
+Route::get('/biro/barangMasuk', function(){
+    return  ('Masuk');
+});
+
+Route::get('/biro/barangKeluar', function(){
+    return  ('Keluar');
+});
+
+
+
+//=====================================
+//============Admin====================
