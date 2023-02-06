@@ -54,7 +54,7 @@
                                     <div class="modal-content">
                                         <!-- Modal Header -->
                                         <div class="modal-header">
-                                            <h3 class="text text-primary"><strong>Tambah Data Barang</strong></h3>
+                                            <h3 class="text text-primary"><strong>Tambah Data Barang Masuk</strong></h3>
                                             <button type="button" class="close" data-dismiss="modal">
                                                 <span aria-hidden="true">&times;</span>
                                                 <span class="sr-only">Close</span>
@@ -73,11 +73,11 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="inputMessage">Jumlah</label>
-                                                            <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
+                                                            <input class="form-control" id="inputMessage" placeholder="Enter your message"/>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="inputMessage">Harga</label>
-                                                            <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
+                                                            <input class="form-control" id="inputMessage" placeholder="Enter your message"/>
                                                         </div>
                                                       </div>
                                                       <div class="col">
@@ -110,7 +110,7 @@
                                     <div class="modal-content">
                                         <!-- Modal Header -->
                                         <div class="modal-header">
-                                            <h3 class="text text-primary"><strong>Tambah Data Barang</strong></h3>
+                                            <h3 class="text text-primary"><strong>Tambah Data Barang Keluar</strong></h3>
                                             <button type="button" class="close" data-dismiss="modal">
                                                 <span aria-hidden="true">&times;</span>
                                                 <span class="sr-only">Close</span>

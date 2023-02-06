@@ -5,7 +5,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Data User</h4>
+                <h4 class="page-title">Barang Masuk</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="#">
@@ -35,11 +35,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Daftar Data User</h4>
-                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
-                                    <i class="fa fa-plus"></i>
-                                    Add Row
-                                </button>
+                                <h4 class="card-title"> Data  Barang Keluar</h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -49,20 +45,21 @@
                                 <table id="add-row" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-                                            <th>Nama</th>
-                                            <th>NIP</th>
-                                            <th>Bagian</th>
-                                            <th>Role</th>
+                                            <th>Barang</th>
+                                            <th>Jumlah</th>
+                                            <th>Harga</th>
+                                            <th>Tanggal</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
                                         <tr>
-                                            <td>Udin</td>
-                                            <td>1921312412</td>
-                                            <td>Kinerja</td>
-                                            <td>Admin</td>
+                                            <td>Kertas</td>
+                                            <td>1</td>
+                                            <td>45000</td>
+                                            <td>4</td>
+                                            <td>01-24-2023</td>
                                             <td>
                                                 <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
                                                 <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>

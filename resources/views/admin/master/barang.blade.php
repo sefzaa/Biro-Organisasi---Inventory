@@ -5,7 +5,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Data User</h4>
+                <h4 class="page-title">Data Barang</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="#">
@@ -35,7 +35,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Daftar Data User</h4>
+                                <h4 class="card-title">Daftar Data Barang</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
                                     Add Row
@@ -50,8 +50,8 @@
                                     <thead>
                                         <tr>
                                             <th>Nama</th>
-                                            <th>NIP</th>
-                                            <th>Bagian</th>
+                                            <th>Kategori</th>
+                                            <th></th>
                                             <th>Role</th>
                                             <th>Action</th>
                                         </tr>

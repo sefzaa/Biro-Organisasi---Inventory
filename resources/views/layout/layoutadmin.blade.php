@@ -117,7 +117,7 @@
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
 									Sefza
-									<span class="user-level">Biro</span>
+									<span class="user-level">Admin</span>
 								</span>
 							</a>
 
@@ -125,19 +125,19 @@
 					</div>
 					<ul class="nav">
 						<li class="nav-item">
-							<a href="/home">
+							<a href="/admin/dashboard">
 								<i class="fas fa-home"></i> 
 								<p>Dashboard</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="/home">
+							<a href="/admin/barangMasuk">
 								<i class="fas fa-cart-plus"></i> 
 								<p>Barang Masuk</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="/home">
+							<a href="/admin/barangKeluar">
 								<i class="fas fa-cart-arrow-down"></i> 
 								<p>Barang Keluar</p>
 							</a>
