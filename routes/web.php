@@ -43,7 +43,7 @@ use App\Http\Controllers\KategoriController;
 //     });
 
 Route::get('/', function () {
-    return view ('biro.dashboard');
+    return view ('biro.barangMasuk');
 
 });
 

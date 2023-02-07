@@ -25,7 +25,7 @@
 <body class="login">
 	<div class="wrapper wrapper-login">
 		<div class="container container-login animated fadeIn">
-			<h3 class="text-center">Sign In To Admin</h3>
+			<h3 class="text-center">Sign In</h3>
 			<div class="login-form">
 				<div class="form-group form-floating-label">
 					<input id="username" name="username" type="text" class="form-control input-border-bottom" required>

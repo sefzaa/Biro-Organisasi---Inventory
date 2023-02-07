@@ -37,7 +37,7 @@
 
                             <!-- Button to trigger modal -->
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Barang Masuk</h4>
+                                <h4 class="card-title">Data Arus Barang</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalFormMasuk">
                                     <i class="fa fa-plus"></i>
                                      Masuk 
@@ -72,15 +72,20 @@
                                                             <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="inputMessage">Jumlah</label>
-                                                            <input class="form-control" id="inputMessage" placeholder="Enter your message"/>
+                                                            <label for="inputEmail">Merk</label>
+                                                            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email"/>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="inputMessage">Harga</label>
                                                             <input class="form-control" id="inputMessage" placeholder="Enter your message"/>
                                                         </div>
+                                                        
                                                       </div>
                                                       <div class="col">
+                                                        <div class="form-group">
+                                                            <label for="inputMessage">Jumlah</label>
+                                                            <input class="form-control" id="inputMessage" placeholder="Enter your message"/>
+                                                        </div>
                                                         <div class="form-group">
                                                             <label for="inputMessage">Keterangan</label>
                                                             <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
@@ -156,7 +161,7 @@
                                     <thead>
                                         <tr>
                                             <th>Barang</th>
-                                            <th>Harga Satuan</th>
+                                            <th>Merk</th>
                                             <th>Stok</th>
                                         </tr>
                                     </thead>
@@ -164,7 +169,7 @@
                                     <tbody>
                                         <tr>
                                             <td>Kertas</td>
-                                            <td>4000</td>
+                                            <td>Paper Base</td>
                                             <td>4</td>
                                         </tr>
                                     </tbody>

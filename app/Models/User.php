@@ -13,11 +13,13 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
     
     protected $table = 'users';
+    protected $primaryKey = "id";
 
-    
     protected $fillable = [
+        'id',
         'name',
         'email',
+        'phone_number',
         'password',
         'level',
         'created_at',
@@ -33,5 +35,13 @@ class User extends Authenticatable
     
     const CREATED_AT = 'creation_at';
     const UPDATED_AT = 'updated_at';
+
+    public function BarangMasuk(){
+        return $this->belongsTo(BarangMasuk::class);
+        
+    }
+    public function BarangKeluar(){
+        return $this->belongsTo(BarangKeluar::class);
+    }
     
 }

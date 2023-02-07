@@ -5,7 +5,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Arus Barang</h4>
+                <h4 class="page-title">Barang Masuk</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="#">
@@ -35,7 +35,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Barang Masuk</h4>
+                                <h4 class="card-title">Data Barang Masuk</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
                                     Add Row
@@ -50,6 +50,7 @@
                                     <thead>
                                         <tr>
                                             <th>Barang</th>
+                                            <th>Merk</th>
                                             <th>Jumlah</th>
                                             <th>Harga</th>
                                             <th>Tanggal</th>
@@ -60,6 +61,7 @@
                                     <tbody>
                                         <tr>
                                             <td>Kertas</td>
+                                            <td>PaperBase</td>
                                             <td>1</td>
                                             <td>45000</td>
                                             <td>4</td>

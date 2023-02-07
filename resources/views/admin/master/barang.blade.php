@@ -49,7 +49,7 @@
                                 <table id="add-row" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-                                            <th>Nama</th>
+                                        <th>Nama</th>
                                             <th>Kategori</th>
                                             <th></th>
                                             <th>Role</th>
