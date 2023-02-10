@@ -43,9 +43,16 @@ use App\Http\Controllers\KategoriController;
 //     });
 
 Route::get('/', function () {
-    return view ('biro.barangMasuk');
+    return view ('welcome');
 
 });
+
+Route::get('/home', function(){
+    return view ('home');
+})->middleware(['auth']);
+
+
+//===============
 
 
 Route::get('/biro/dashboard', function(){
