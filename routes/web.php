@@ -87,3 +87,6 @@ Route::get('/admin/barangKeluar', function(){
 Route::get('/user', function(){
     return view ('admin.master.user.dataUser');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
