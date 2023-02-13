@@ -36,12 +36,56 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Barang Keluar</h4>
-                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
+                                <button class="btn btn-danger btn-round ml-auto" data-toggle="modal" data-target="#modalFormKeluar">
                                     <i class="fa fa-plus"></i>
-                                    Add Row
+                                     Keluar 
                                 </button>
                             </div>
                         </div>
+                        
+<!-- Modal -->
+<div class="modal fade" id="modalFormKeluar" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3 class="text text-primary"><strong>Tambah Data Barang Keluar</strong></h3>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <form role="form">
+                    <div class="container">
+                            <div class="form-group">
+                                <label for="inputEmail">Barang</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMessage">Jumlah</label>
+                                <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMessage">Keterangan</label>
+                                <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
+                            </div>
+                    </div>
+                        
+                </form>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button  type="submit" class="btn btn-primary submitBtn">SUBMIT</button>
+            </div>
+        </div>
+    </div>
+ </div>
+ 
                         <div class="card-body">
                           
 
@@ -50,25 +94,28 @@
                                     <thead>
                                         <tr>
                                             <th>Barang</th>
+                                            <th>Merk</th>
                                             <th>Jumlah</th>
-                                            <th>Harga</th>
                                             <th>Tanggal</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
+                                        @foreach ($barangKeluar as $bk )
+                                            
                                         <tr>
-                                            <td>Kertas</td>
-                                            <td>1</td>
-                                            <td>45000</td>
-                                            <td>4</td>
-                                            <td>01-24-2023</td>
+                                            <td>{{$bk -> nama_barang}}</td>
+                                            <td>{{$bk -> merk}}</td>
+                                            <td>{{$bk -> jumlah_barangKeluar}}</td>
+                                            <td>{{$bk -> created_at}}</td>
                                             <td>
                                                 <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
                                                 <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>
+                                        @endforeach
+
                                     </tbody>
                                     
                                 </table>

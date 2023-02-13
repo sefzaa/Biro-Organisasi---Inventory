@@ -35,122 +35,13 @@
                     <div class="card">
                         <div class="card-header">
 
-                            <!-- Button to trigger modal -->
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Data Arus Barang</h4>
-                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalFormMasuk">
-                                    <i class="fa fa-plus"></i>
-                                     Masuk 
-                                </button>
-                                <button class="btn btn-danger btn-round mr-2" data-toggle="modal" data-target="#modalFormKeluar">
-                                    <i class="fa fa-plus"></i>
-                                     Keluar 
-                                </button>
+                               
                             </div>
                             
-                            <!-- Modal -->
-                            <div class="modal fade" id="modalFormMasuk" role="dialog">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                        <!-- Modal Header -->
-                                        <div class="modal-header">
-                                            <h3 class="text text-primary"><strong>Tambah Data Barang Masuk</strong></h3>
-                                            <button type="button" class="close" data-dismiss="modal">
-                                                <span aria-hidden="true">&times;</span>
-                                                <span class="sr-only">Close</span>
-                                            </button>
-                                        </div>
-                                        
-                                        <!-- Modal Body -->
-                                        <div class="modal-body">
-                                            <form role="form">
-                                                <div class="container">
-                                                    <div class="row">
-                                                      <div class="col">
-                                                        <div class="form-group">
-                                                            <label for="inputEmail">Barang</label>
-                                                            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email"/>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="inputEmail">Merk</label>
-                                                            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email"/>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="inputMessage">Harga</label>
-                                                            <input class="form-control" id="inputMessage" placeholder="Enter your message"/>
-                                                        </div>
-                                                        
-                                                      </div>
-                                                      <div class="col">
-                                                        <div class="form-group">
-                                                            <label for="inputMessage">Jumlah</label>
-                                                            <input class="form-control" id="inputMessage" placeholder="Enter your message"/>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="inputMessage">Keterangan</label>
-                                                            <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="inputMessage">Upload File</label>
-                                                            <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        
-                                        <!-- Modal Footer -->
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">SUBMIT</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
 
-                             <!-- Modal -->
-                             <div class="modal fade" id="modalFormKeluar" role="dialog">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <!-- Modal Header -->
-                                        <div class="modal-header">
-                                            <h3 class="text text-primary"><strong>Tambah Data Barang Keluar</strong></h3>
-                                            <button type="button" class="close" data-dismiss="modal">
-                                                <span aria-hidden="true">&times;</span>
-                                                <span class="sr-only">Close</span>
-                                            </button>
-                                        </div>
-                                        
-                                        <!-- Modal Body -->
-                                        <div class="modal-body">
-                                            <form role="form">
-                                                <div class="container">
-                                                        <div class="form-group">
-                                                            <label for="inputEmail">Barang</label>
-                                                            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email"/>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="inputMessage">Jumlah</label>
-                                                            <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="inputMessage">Keterangan</label>
-                                                            <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
-                                                        </div>
-                                                </div>
-                                                    
-                                            </form>
-                                        </div>
-                                        
-                                        <!-- Modal Footer -->
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">SUBMIT</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                           
                         </div>
                         <div class="card-body">
@@ -167,11 +58,13 @@
                                     </thead>
                                     
                                     <tbody>
+                                        @foreach ($barang as $b )                                                                               
                                         <tr>
-                                            <td>Kertas</td>
-                                            <td>Paper Base</td>
-                                            <td>4</td>
+                                            <td>{{$b -> nama_barang}}</td>
+                                            <td>{{$b -> merk}}</td>
+                                            <td>{{$b -> stok}}</td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                     
                                 </table>

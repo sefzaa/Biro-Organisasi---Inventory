@@ -6,6 +6,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\BarangMasukController;
+use App\Http\Controllers\BarangKeluarController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,78 +21,34 @@ use App\Http\Controllers\KategoriController;
 |
 */
 
-// Route::get('/', [AuthController::class, 'index'])->name('index');
-// Route::post('/cek_login', [AuthController::class, 'cek_login']);
-// Route::get('/logout', [AuthController::class, 'logout']);
+//============================
+//===========Biro=============
+//============================
+Route::get('/Dashboard',[ BarangController::class, 'index'])->name('Dashboard');
 
-// Route::group(['middleware' => ['auth', 'checkLevel:admin']], function(){
-
-//     //Data Master - User
-//     Route::get('/user', [UserController::class, 'index']);
-
-//     //Data Master - Kategori
-//     Route::get('/kategori', [KategoriController::class, 'index']);
-
-//     //Data Master - User
-//     Route::get('/barang', [BarangController::class, 'index']);
-
-//     });
+Route::get('/barangMasuk',[ BarangMasukController::class, 'index'])->name('barangMasuk');
+Route::post('/barangMasuk/create',[ BarangMasukController::class, 'create']);
 
 
-// Route::group(['middleware' => ['auth', 'checkLevel:admin, gudang']], function(){
-    
-//         Route::get('/home', [HomeController::class, 'home']);
-
-//     });
-
-Route::get('/', function () {
-    return view ('biro.dashboard');
-
-});
-
-Route::get('/home', function(){
-    return view ('home');
-})->middleware(['auth']);
-
-
-//===============
-
-
-Route::get('/biro/dashboard', function(){
-    return view ('/biro/dashboard');
-});
-
-Route::get('/biro/barangMasuk', function(){
-    return  view ('biro.barangMasuk');
-});
-
-Route::get('/biro/barangKeluar', function(){
-    return view  ('biro.barangKeluar');
-});
+Route::get('/barangKeluar',[ BarangKeluarController::class, 'index']);
 
 
 
-//=====================================
-//============Admin====================
 
-Route::get('/admin/dashboard', function(){
-    return view ('/admin/dashboard');
-});
 
-Route::get('/admin/barangMasuk', function(){
-    return view ('admin.barangMasuk');
-});
 
-Route::get('/admin/barangKeluar', function(){
-    return view ('admin.barangKeluar');
-});
 
+//============================
+//===========Login============
+//============================
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+//==============================
+//===========Testing============
+//==============================
 Route::get('/user', function(){
     return view ('admin.master.user.dataUser');
 });
-
-
-//==========================
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

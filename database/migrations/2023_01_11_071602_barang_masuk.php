@@ -15,8 +15,11 @@ return new class extends Migration
     {
         Schema::create('barang_masuk', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_barang')->nullable();
+            $table->string('merk')->nullable();
             $table->integer('harga')->nullable();
             $table->integer('jumlah_barangMasuk')->nullable();
+            $table->integer('total')->nullable();
             $table->string('keterangan')->nullable();
             $table->string('file')->nullable();
             $table->timestamps();

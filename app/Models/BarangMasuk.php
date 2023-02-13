@@ -9,17 +9,10 @@ class BarangMasuk extends Model
 {
     use HasFactory;
     protected $table = "barang_masuk";
-    protected $guarded = ["id"];
-    protected $fillable = [
-        'id',
-        'harga',
-        'jumlah_barangKeluar',
-        'keterangan','file', 
-        'created_at',
-        'update_at'
-    ];
+    protected $guarded = [];
     
-    const CREATED_AT = 'creation_at';
+    
+    const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
     public function Barang(){

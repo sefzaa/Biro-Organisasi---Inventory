@@ -12,6 +12,8 @@ class BarangKeluar extends Model
     protected $guarded = ["id"];
     protected $fillable = [
         'id',
+        'nama_barang',
+        'merk',
         'jumlah_barangKeluar',
         'keterangan',
         'created_at',
