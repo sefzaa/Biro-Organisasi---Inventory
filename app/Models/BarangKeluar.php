@@ -9,18 +9,10 @@ class BarangKeluar extends Model
 {
     use HasFactory;
     protected $table = "barang_keluar";
-    protected $guarded = ["id"];
-    protected $fillable = [
-        'id',
-        'nama_barang',
-        'merk',
-        'jumlah_barangKeluar',
-        'keterangan',
-        'created_at',
-        'update_at'
-    ];
+    protected $guarded = [];
+  
     
-    const CREATED_AT = 'creation_at';
+    const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
     
 

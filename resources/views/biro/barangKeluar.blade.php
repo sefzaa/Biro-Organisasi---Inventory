@@ -57,31 +57,33 @@
             </div>
             
             <!-- Modal Body -->
-            <div class="modal-body">
-                <form role="form">
+            <form role="form" action="barangKeluar/create" method="POST">
+                @csrf
+                <div class="modal-body">
+                
                     <div class="container">
                             <div class="form-group">
-                                <label for="inputEmail">Barang</label>
-                                <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email"/>
+                                <label >Barang</label>
+                                <input name="nama_barang" type="text" class="form-control"  placeholder="Inputkan Barang"/>
                             </div>
                             <div class="form-group">
-                                <label for="inputMessage">Jumlah</label>
-                                <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
+                                <label >Jumlah</label>
+                                <input name="jumlah_barangKeluar" type="number" class="form-control"  placeholder="Inputkan Jumlah"/>
                             </div>
                             <div class="form-group">
-                                <label for="inputMessage">Keterangan</label>
-                                <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
+                                <label >Keterangan</label>
+                                <textarea name="keterangan" class="form-control"  placeholder="Inputkan Keterangan"></textarea>
                             </div>
                     </div>
                         
-                </form>
-            </div>
+                </div>
             
             <!-- Modal Footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button  type="submit" class="btn btn-primary submitBtn">SUBMIT</button>
             </div>
+            </form>
         </div>
     </div>
  </div>

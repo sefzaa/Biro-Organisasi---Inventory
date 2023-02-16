@@ -28,9 +28,12 @@ Route::get('/Dashboard',[ BarangController::class, 'index'])->name('Dashboard');
 
 Route::get('/barangMasuk',[ BarangMasukController::class, 'index'])->name('barangMasuk');
 Route::post('/barangMasuk/create',[ BarangMasukController::class, 'create']);
+Route::match(['get', 'post'],'/barangMasuk/edit/{id}', [BarangMasukController::class, 'edit']);
 
 
-Route::get('/barangKeluar',[ BarangKeluarController::class, 'index']);
+Route::get('/barangKeluar',[ BarangKeluarController::class, 'index'])->name('barangKeluar');
+Route::post('/barangKeluar/create',[ BarangKeluarController::class, 'create']);
+
 
 
 

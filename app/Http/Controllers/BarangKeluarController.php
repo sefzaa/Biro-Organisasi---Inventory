@@ -20,4 +20,10 @@ class BarangKeluarController extends Controller
         return view ('admin.barangKeluar', compact(['']));
 
     }
+
+    public function create(Request $request)
+    { 
+        BarangKeluar::create($request->all());
+        return redirect()->route('barangKeluar');
+    }
 }

@@ -24,7 +24,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label >Barang</label>
-                                <input type="text" name="nama_barang" class="form-control"  placeholder="Inputkan Barang"/>
+                                <input type="text" name="nama_barang" class="form-control"  placeholder="Inputkan Barang" />
                             </div>
                             <div class="form-group">
                                 <label >Merk</label>
@@ -43,11 +43,11 @@
                             </div>
                             <div class="form-group">
                                 <label >Keterangan</label>
-                                <textarea name="keterangan" class="form-control"  placeholder="Enter your message"></textarea>
+                                <input name="keterangan" class="form-control"  placeholder="Enter your message"/>
                             </div>
                             <div class="form-group">
                                 <label >Upload File</label>
-                                <textarea name="file" class="form-control" placeholder="Enter your message"></textarea>
+                                <input name="file" class="form-control" placeholder="Enter your message"/>
                             </div>
                         </div>
                         </div>
@@ -94,7 +94,6 @@
             <div class="row">
                 
 
-            
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -133,10 +132,10 @@
                                             <td>{{$bm -> merk}}</td>
                                             <td>{{$bm -> jumlah_barangMasuk}}</td>
                                             <td>{{$bm -> harga}}</td>
-                                            <td>{{$bm -> total}}</td>
-                                            <td>{{$bm -> created_at}}</td>
+                                            <td>{{$bm->harga * $bm->jumlah_barangMasuk}}</td>
+                                            <td>{{$bm -> updated_at}}</td>
                                             <td>
-                                                <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                                                <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editBarangMasuk-{{$bm->id}}"><i class="fa fa-edit" ></i> Edit</a>
                                                 <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>
@@ -152,6 +151,75 @@
             </div>
         </div>
     </div>
+
+    
+    @foreach ($barangMasuk as $m)
+        
+    <div class="modal fade" id="editBarangMasuk-{{$m->id}}" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h3 class="text text-primary"><strong>Edit Data Barang Masuk</strong></h3>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                </div>
+                
+                <!-- Modal Body -->
+                <form action="{{url('/barangMasuk/edit/'.$m->id)}}"  method="POST">
+                    <div class="modal-body">
+                    
+                        @csrf
+                        <div class="container">
+                            <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label >Barang</label>
+                                    <input type="text" name="nama_barang" class="form-control"   value="{{$m->nama_barang}}"/>
+                                </div>
+                                <div class="form-group">
+                                    <label >Merk</label>
+                                    <input type="text" name="merk" class="form-control" value="{{$m->merk}}"/>
+                                </div>
+                                <div class="form-group">
+                                    <label >Harga</label>
+                                    <input type="number" name="harga" class="form-control"  value="{{$m->harga}}"/>
+                                </div>
+                                
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label >Jumlah</label>
+                                    <input type="number" name="jumlah_barangMasuk" class="form-control"  value="{{$m->jumlah_barangMasuk}}"/>
+                                </div>
+                                <div class="form-group">
+                                    <label >Keterangan</label>
+                                    <input name="keterangan" class="form-control"  value="{{$m->keterangan}}"/>
+                                </div>
+                                <div class="form-group">
+                                    <label >Upload File</label>
+                                    <input name="file" class="form-control"  value="{{$m->file}}"/>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" >Save</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    @endforeach
+
+
     
 </div>
     
