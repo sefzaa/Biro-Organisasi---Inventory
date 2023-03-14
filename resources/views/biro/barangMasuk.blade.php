@@ -23,12 +23,12 @@
                         <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <label >Barang</label>
-                                <input type="text" name="nama_barang" class="form-control"  placeholder="Inputkan Barang" />
-                            </div>
-                            <div class="form-group">
-                                <label >Merk</label>
-                                <input type="text" name="merk" class="form-control"  placeholder="Inputkan Merk Barang"/>
+                                <label>Barang</label>
+                                <select class="form-control" name="nama_barang" id="nama_barang">
+                                    @foreach($barang as $b)
+                                        <option value="{{ $b->nama_barang }}">{{ $b->nama_barang }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label >Harga</label>
@@ -46,8 +46,8 @@
                                 <input name="keterangan" class="form-control"  placeholder="Enter your message"/>
                             </div>
                             <div class="form-group">
-                                <label >Upload File</label>
-                                <input name="file" class="form-control" placeholder="Enter your message"/>
+                                <label for="file">Upload File</label>
+                                <input type="file" name="file" class="form-control" id="file">
                             </div>
                         </div>
                         </div>
@@ -115,7 +115,6 @@
                                        
                                         <tr>
                                             <th>Barang</th>
-                                            <th>Merk</th>
                                             <th>Jumlah</th>
                                             <th>Harga</th>
                                             <th>Total</th>
@@ -129,17 +128,29 @@
                                             
                                         <tr>
                                             <td>{{$bm -> nama_barang}}</td>
-                                            <td>{{$bm -> merk}}</td>
                                             <td>{{$bm -> jumlah_barangMasuk}}</td>
                                             <td>{{$bm -> harga}}</td>
                                             <td>{{$bm->harga * $bm->jumlah_barangMasuk}}</td>
-                                            <td>{{$bm -> updated_at}}</td>
+                                            <td>{{date('d-m-Y', strtotime($bm -> updated_at))}}</td>
                                             <td>
                                                 <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editBarangMasuk-{{$bm->id}}"><i class="fa fa-edit" ></i> Edit</a>
-                                                <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
+                                                <a href="/barangMasuk/detail/{{$bm->id}}" class="btn btn-success btn-xs" ><i class="fa fa-edit" ></i> Detail</a>
+
+                                                <form action="{{ url('/barangMasuk/destroy/'.$bm->id) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"><i class="fa fa-trash"></i> Hapus</button>
+                                                </form>  
                                             </td>
                                         </tr>
                                         @endforeach
+
+                                        @if (session('flash_message_success'))
+                                        <div class="alert alert-success">
+                                            {{session ('flash_message_success')}}
+                                        </div>
+                                            
+                                        @endif
 
                                     </tbody>
                                     
@@ -180,10 +191,6 @@
                                     <input type="text" name="nama_barang" class="form-control"   value="{{$m->nama_barang}}"/>
                                 </div>
                                 <div class="form-group">
-                                    <label >Merk</label>
-                                    <input type="text" name="merk" class="form-control" value="{{$m->merk}}"/>
-                                </div>
-                                <div class="form-group">
                                     <label >Harga</label>
                                     <input type="number" name="harga" class="form-control"  value="{{$m->harga}}"/>
                                 </div>
@@ -199,8 +206,8 @@
                                     <input name="keterangan" class="form-control"  value="{{$m->keterangan}}"/>
                                 </div>
                                 <div class="form-group">
-                                    <label >Upload File</label>
-                                    <input name="file" class="form-control"  value="{{$m->file}}"/>
+                                    <label for="file">File</label>
+                                    <input type="file" name="file" class="form-control" id="file" value="{{$m->file}}">
                                 </div>
                             </div>
                             </div>

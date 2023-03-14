@@ -158,13 +158,13 @@
 								<ul class="nav nav-collapse">
 									
 									<li>
-										<a href="/kategori">
-											<span class="sub-item">Data Kategori</span>
+										<a href="/inventory">
+											<span class="sub-item">Data Inventory</span>
 										</a>
 									</li>
 									<li>
-										<a href="/barang">
-											<span class="sub-item">Data Barang</span>
+										<a href="/atk">
+											<span class="sub-item">Data ATK</span>
 										</a>
 									</li>
 								</ul>

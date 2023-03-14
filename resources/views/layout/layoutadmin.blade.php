@@ -163,12 +163,12 @@
 									</li>
 									<li>
 										<a href="/kategori">
-											<span class="sub-item">Data Kategori</span>
+											<span class="sub-item">Data Inventory</span>
 										</a>
 									</li>
 									<li>
 										<a href="/barang">
-											<span class="sub-item">Data Barang</span>
+											<span class="sub-item">Data ATK</span>
 										</a>
 									</li>
 								</ul>

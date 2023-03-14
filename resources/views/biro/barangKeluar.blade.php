@@ -43,8 +43,9 @@
                             </div>
                         </div>
                         
-<!-- Modal -->
-<div class="modal fade" id="modalFormKeluar" role="dialog">
+    <!-- Modal -->
+    <div class="modal fade" id="modalFormKeluar" role="dialog">
+
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
@@ -57,14 +58,16 @@
             </div>
             
             <!-- Modal Body -->
-            <form role="form" action="barangKeluar/create" method="POST">
-                @csrf
-                <div class="modal-body">
-                
+            <form role="form" action="/barangKeluar/create" method="POST">         
+                @csrf 
+                <div class="modal-body">               
                     <div class="container">
                             <div class="form-group">
-                                <label >Barang</label>
-                                <input name="nama_barang" type="text" class="form-control"  placeholder="Inputkan Barang"/>
+                                <select class="form-control" id="item" name="nama_barang">
+                                    @foreach($barang as $a)
+                                        <option value="{{ $a->nama_barang }}">{{ $a->nama_barang }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label >Jumlah</label>
@@ -72,18 +75,18 @@
                             </div>
                             <div class="form-group">
                                 <label >Keterangan</label>
-                                <textarea name="keterangan" class="form-control"  placeholder="Inputkan Keterangan"></textarea>
+                                <input name="keterangan" class="form-control" type="text"  placeholder="Inputkan Keterangan"/>
                             </div>
-                    </div>
-                        
+                    </div>    
                 </div>
             
-            <!-- Modal Footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button  type="submit" class="btn btn-primary submitBtn">SUBMIT</button>
-            </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button  type="submit" class="btn btn-primary submitBtn">SUBMIT</button>
+                </div>
             </form>
+
         </div>
     </div>
  </div>
@@ -96,7 +99,6 @@
                                     <thead>
                                         <tr>
                                             <th>Barang</th>
-                                            <th>Merk</th>
                                             <th>Jumlah</th>
                                             <th>Tanggal</th>
                                             <th>Action</th>
@@ -108,11 +110,10 @@
                                             
                                         <tr>
                                             <td>{{$bk -> nama_barang}}</td>
-                                            <td>{{$bk -> merk}}</td>
                                             <td>{{$bk -> jumlah_barangKeluar}}</td>
                                             <td>{{$bk -> created_at}}</td>
                                             <td>
-                                                <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                                                <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editBarangKeluar-{{$bk->id}}"><i class="fa fa-edit" ></i> Edit</a>
                                                 <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                             </td>
                                         </tr>
@@ -123,12 +124,16 @@
                                 </table>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     
+    
+</div>
 </div>
     
 @endsection

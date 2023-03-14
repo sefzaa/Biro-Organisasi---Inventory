@@ -17,10 +17,10 @@ class BarangMasuk extends Model
 
 
     
-    public function Barang(){
-        return $this->hasMany(Barang::class);
-    }
-    public function User(){
-        return $this->hasMany(User::class);
-    }
+    // public function Barang(){
+    //     return $this->belongsTo(Barang::class);
+    // }
+    // public function User(){
+    //     return $this->belongsTo(User::class);
+    // }
 }

@@ -15,8 +15,15 @@ class BarangController extends Controller
     public function index()
     {
         $barang = Barang::all();
+        return view ('biro.barang', compact(['barang']));
+        // return view ('biro.dashboard', compact(['barang']));
+
+    }
+    public function stok()
+    {
+        $barang = Barang::all();
         return view ('biro.dashboard', compact(['barang']));
-        return view ('admin.dashboard', compact(['warga']));
+        // return view ('biro.dashboard', compact(['barang']));
 
     }
 
@@ -25,9 +32,19 @@ class BarangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $request->validate([
+            'nama_barang' => 'required|string',
+        ]);
+
+        // Simpan data barang keluar pada tabel barang_keluar
+        $barang = new Barang();
+        $barang->nama_barang = $request->nama_barang;
+        $barang->stok = 0;
+        $barang->save();
+
+        return redirect()->back()->with('success', 'Item saved successfully.');
     }
 
     /**

@@ -10,30 +10,23 @@ class Barang extends Model
     use HasFactory;
 
     protected $table = 'barang';
-    protected $guarded = ["id"];
-    protected $fillable = [
-        'id',
-        'nama_barang',
-        'merk',
-        'stok',
-        'created_at',
-        'update_at',
-    ];
+    protected $guarded = [];
+ 
 
-    const CREATED_AT = 'creation_at';
+    const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
-    public function BarangMasuk(){
-        return $this->belongsTo(BarangMasuk::class);
+    // public function BarangMasuk(){
+    //     return $this->hasMany(BarangMasuk::class);
         
-    }
+    // }
     public function BarangKeluar(){
-        return $this->belongsTo(BarangKeluar::class);
+        return $this->hasMany(BarangKeluar::class);
         
     }
-    public function Kategori(){
-        return $this->belongsTo(Kategori::class);
-    }
+    // public function Kategori(){
+    //     return $this->hasMany(Kategori::class);
+    // }
 
 
 }

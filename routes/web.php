@@ -24,17 +24,23 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 //============================
 //===========Biro=============
 //============================
-Route::get('/Dashboard',[ BarangController::class, 'index'])->name('Dashboard');
+Route::get('/Dashboard',[ BarangController::class, 'stok'])->name('Dashboard');
 
 Route::get('/barangMasuk',[ BarangMasukController::class, 'index'])->name('barangMasuk');
 Route::post('/barangMasuk/create',[ BarangMasukController::class, 'create']);
 Route::match(['get', 'post'],'/barangMasuk/edit/{id}', [BarangMasukController::class, 'edit']);
+Route::delete('/barangMasuk/destroy/{id}',[ BarangMasukController::class, "destroy" ])->name('hapus');
+Route::get('/barangMasuk/detail/{id}',[ BarangMasukController::class, 'show'])->name('detail');
+
 
 
 Route::get('/barangKeluar',[ BarangKeluarController::class, 'index'])->name('barangKeluar');
 Route::post('/barangKeluar/create',[ BarangKeluarController::class, 'create']);
 
 
+
+Route::get('/barang',[ BarangController::class, 'index'])->name('barang');
+Route::post('/barang/create',[ BarangController::class, 'create']);
 
 
 
@@ -52,6 +58,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //==============================
 //===========Testing============
 //==============================
-Route::get('/user', function(){
-    return view ('admin.master.user.dataUser');
+Route::get('/', function(){
+    return view ('');
 });
+
+
+// Route::get('/barangAdmin',[ BarangController::class, 'index'])->name('barang');
+
+
