@@ -125,19 +125,19 @@
 					</div>
 					<ul class="nav">
 						<li class="nav-item">
-							<a href="/biro/dashboard">
+							<a href="/Dashboard">
 								<i class="fas fa-home"></i> 
 								<p>Dashboard</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="/biro/barangMasuk">
+							<a href="/barangMasuk">
 								<i class="fas fa-cart-plus"></i> 
 								<p>Barang Masuk</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="/biro/barangKeluar">
+							<a href="/barangKeluar">
 								<i class="fas fa-cart-arrow-down"></i> 
 								<p>Barang Keluar</p>
 							</a>
@@ -157,13 +157,9 @@
 							<div class="collapse" id="base">
 								<ul class="nav nav-collapse">
 									
+									
 									<li>
-										<a href="/inventory">
-											<span class="sub-item">Data Inventory</span>
-										</a>
-									</li>
-									<li>
-										<a href="/atk">
+										<a href="/barang">
 											<span class="sub-item">Data ATK</span>
 										</a>
 									</li>

@@ -119,6 +119,7 @@
                                             <th>Harga</th>
                                             <th>Total</th>
                                             <th>Tanggal</th>
+                                            <th>Keterangan</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -132,6 +133,7 @@
                                             <td>{{$bm -> harga}}</td>
                                             <td>{{$bm->harga * $bm->jumlah_barangMasuk}}</td>
                                             <td>{{date('d-m-Y', strtotime($bm -> updated_at))}}</td>
+                                            <td>{{$bm -> keterangan}}</td>
                                             <td>
                                                 <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editBarangMasuk-{{$bm->id}}"><i class="fa fa-edit" ></i> Edit</a>
                                                 <a href="/barangMasuk/detail/{{$bm->id}}" class="btn btn-success btn-xs" ><i class="fa fa-edit" ></i> Detail</a>

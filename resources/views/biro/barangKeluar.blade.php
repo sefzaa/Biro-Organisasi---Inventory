@@ -101,6 +101,7 @@
                                             <th>Barang</th>
                                             <th>Jumlah</th>
                                             <th>Tanggal</th>
+                                            <th>Keterangan</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -111,7 +112,8 @@
                                         <tr>
                                             <td>{{$bk -> nama_barang}}</td>
                                             <td>{{$bk -> jumlah_barangKeluar}}</td>
-                                            <td>{{$bk -> created_at}}</td>
+                                            <td>{{date('d-m-Y', strtotime($bk -> created_at))}}</td>
+                                            <td>{{$bk -> keterangan}}</td>
                                             <td>
                                                 <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editBarangKeluar-{{$bk->id}}"><i class="fa fa-edit" ></i> Edit</a>
                                                 <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>

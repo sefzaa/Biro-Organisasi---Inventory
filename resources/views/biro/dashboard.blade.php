@@ -51,14 +51,19 @@
                                 <table id="add-row" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
+                                            <th>#</th>
                                             <th>Barang</th>
                                             <th>Stok</th>
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
-                                        @foreach ($barang as $b )                                                                               
+                                        @php
+                                        $no = 1;
+                                        @endphp                                                                              
+                                        @foreach ($barang as $b ) 
                                         <tr>
+                                            <td>{{$no++}}</td>
                                             <td>{{$b -> nama_barang}}</td>
                                             <td>{{$b -> stok}}</td>
                                         </tr>
