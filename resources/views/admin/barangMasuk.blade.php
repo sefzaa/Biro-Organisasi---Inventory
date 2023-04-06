@@ -72,13 +72,6 @@
                                         </tr>
                                         @endforeach
 
-                                        @if (session('flash_message_success'))
-                                        <div class="alert alert-success">
-                                            {{session ('flash_message_success')}}
-                                        </div>
-                                            
-                                        @endif
-
                                     </tbody>
                                     
                                 </table>

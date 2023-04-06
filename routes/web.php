@@ -59,10 +59,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //===========Testing============
 //==============================
 Route::get('/', function(){
-    return view ('');
+    return view ('welcome');
 });
 
 
-// Route::get('/barangAdmin',[ BarangController::class, 'index'])->name('barang');
+Route::get('/dashboardAdmin',[ BarangController::class, 'stok'])->name('barang');
 
 

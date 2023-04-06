@@ -20,7 +20,7 @@ class BarangMasukController extends Controller
     {
         $barangMasuk = BarangMasuk::all();
         $barang = Barang::all();
-        return view ('biro.barangMasuk', compact(['barangMasuk', 'barang']));
+        return view ('admin.barangMasuk', compact(['barangMasuk', 'barang']));
         // return view ('admin.barangMasuk', compact(['barangMasuk']));
     }
 

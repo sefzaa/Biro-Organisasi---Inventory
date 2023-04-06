@@ -34,27 +34,40 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
+
+                            <div class="d-flex align-items-center">
+                                <h4 class="card-title">Data Arus Barang</h4>
+                               
+                            </div>
+                            
+                           
+
                           
                         </div>
                         <div class="card-body">
                           
 
-                            <div class="table-responsive ">
+                            <div class="table-responsive">
                                 <table id="add-row" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
+                                            <th>#</th>
                                             <th>Barang</th>
-                                            <th>Harga Satuan</th>
                                             <th>Stok</th>
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
+                                        @php
+                                        $no = 1;
+                                        @endphp                                                                              
+                                        @foreach ($barang as $b ) 
                                         <tr>
-                                            <td>Kertas</td>
-                                            <td>4000</td>
-                                            <td>4</td>
+                                            <td>{{$no++}}</td>
+                                            <td>{{$b -> nama_barang}}</td>
+                                            <td>{{$b -> stok}}</td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                     
                                 </table>

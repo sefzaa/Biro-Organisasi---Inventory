@@ -19,9 +19,9 @@ class BarangKeluarController extends Controller
         $barangKeluar = BarangKeluar::all();
         $barang = Barang::all();
         return view ('biro.barangKeluar', compact(['barangKeluar', 'barang']));
-        // return view ('admin.barangKeluar', compact(['']));
-
     }
+
+
 
     public function create(Request $request)
     { 

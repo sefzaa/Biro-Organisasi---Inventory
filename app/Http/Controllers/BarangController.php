@@ -22,7 +22,7 @@ class BarangController extends Controller
     public function stok()
     {
         $barang = Barang::all();
-        return view ('biro.dashboard', compact(['barang']));
+        return view ('admin.dashboard', compact(['barang']));
         // return view ('biro.dashboard', compact(['barang']));
 
     }
