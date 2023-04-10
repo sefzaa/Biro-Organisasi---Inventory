@@ -66,3 +66,14 @@ Route::get('/', function(){
 Route::get('/dashboardAdmin',[ BarangController::class, 'stok'])->name('barang');
 
 
+
+
+// Route untuk admin
+Route::prefix('admin')->middleware('auth', 'admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+});
+
+// Route untuk user
+Route::prefix('user')->middleware('auth', 'user')->name('user.')->group(function () {
+    Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+});
